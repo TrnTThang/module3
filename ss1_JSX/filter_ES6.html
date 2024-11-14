@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>filter and display</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>filter</title>
 </head>
 <body>
-
+<h1> the class have rating more than 4 or equal 4</h1>
+<script>
+    let courses = [
+        { id: 1, title: "ReactJS Tutorial", rating: 4.2 },
+        { id: 2, title: "Angular Tutorial", rating: 2.5 },
+        { id: 3, title: "VueJS Tutorial", rating: 3.8 },
+        { id: 4, title: "Java Tutorial", rating: 4 },
+        { id: 5, title: "JavaScript Tutorial", rating: 3.5 },
+    ];
+    if (courses.length > 0) {
+        let arr = courses
+            .filter((item) => item.rating >= 4)
+            .map((item) => item.title);
+        let course = document.querySelector(".course");
+        course.textContent = arr.join(", ");
+    } else {
+        let course = document.querySelector(".course");
+        course.textContent = "Don't have any class";
+    }
+</script>
 </body>
 </html>
